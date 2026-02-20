@@ -95,7 +95,7 @@ fig_scatter = px.scatter(
     size="Charging Capacity (kW)",
     color="Distance to City (km)",
     hover_name="Station ID",
-    hover_data=["City","Charger Type","Station Operator","Optimal"],
+    hover_data=["Charger Type","Station Operator","Optimal"],
     color_continuous_scale="Viridis",
     size_max=20,
     title="Cost vs Daily Usage (marker size = capacity, color = distance)"
@@ -123,7 +123,7 @@ st.plotly_chart(fig_operator)
 # -------------------------
 st.subheader("Recommended / Model-Optimal Stations")
 optimal_stations = df_filtered[df_filtered["Optimal"]==1]
-st.dataframe(optimal_stations[["Station ID","City","Address","Charger Type","Usage Stats (avg users/day)","Charging Capacity (kW)"]])
+st.dataframe(optimal_stations[["Station ID","Address","Charger Type","Usage Stats (avg users/day)","Charging Capacity (kW)"]])
 
 # -------------------------
 # 10. Download Filtered Data
